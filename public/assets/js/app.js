@@ -16,7 +16,7 @@
 
         methods: function(e) {
             axilInit.w();
-            axilInit.contactForm();
+            // axilInit.contactForm();
             axilInit.axilBackToTop();
             axilInit.stickyHeaderMenu();
             axilInit.mobileMenuActivation();
@@ -34,46 +34,46 @@
             axilInit.marqueImages();
             axilInit.axilHover();
             axilInit.onePageTopFixed();
-           
+
         },
 
         w: function(e) {
             this._window.on('load', axilInit.l).on('scroll', axilInit.res)
         },
 
-        contactForm: function() {
-            $('.axil-contact-form').on('submit', function(e) {
-                e.preventDefault();
-                var _self = $(this);
-                var _selector = _self.closest('input,textarea');
-                _self.closest('div').find('input,textarea').removeAttr('style');
-                _self.find('.error-msg').remove();
-                _self.closest('div').find('button[type="submit"]').attr('disabled', 'disabled');
-                var data = $(this).serialize();
-                $.ajax({
-                    url: 'mail.php',
-                    type: 'post',
-                    dataType: 'json',
-                    data: data,
-                    success: function(data) {
-                        _self.closest('div').find('button[type="submit"]').removeAttr('disabled');
-                        if (data.code === false) {
-                            _self.closest('div').find('[name="' + data.field + '"]');
-                            _self.find('.btn-primary').after('<div class="error-msg"><p>*' + data.err + '</p></div>');
-                        } else {
-                            $('.error-msg').hide();
-                            $('.form-group').removeClass('focused');
-                            _self.find('.btn-primary').after('<div class="success-msg"><p>' + data.success + '</p></div>');
-                            _self.closest('div').find('input,textarea').val('');
+        // contactForm: function() {
+        //     $('.axil-contact-form').on('submit', function(e) {
+        //         e.preventDefault();
+        //         var _self = $(this);
+        //         var _selector = _self.closest('input,textarea');
+        //         _self.closest('div').find('input,textarea').removeAttr('style');
+        //         _self.find('.error-msg').remove();
+        //         _self.closest('div').find('button[type="submit"]').attr('disabled', 'disabled');
+        //         var data = $(this).serialize();
+        //         $.ajax({
+        //             url: 'mail.php',
+        //             type: 'post',
+        //             dataType: 'json',
+        //             data: data,
+        //             success: function(data) {
+        //                 _self.closest('div').find('button[type="submit"]').removeAttr('disabled');
+        //                 if (data.code === false) {
+        //                     _self.closest('div').find('[name="' + data.field + '"]');
+        //                     _self.find('.btn-primary').after('<div class="error-msg"><p>*' + data.err + '</p></div>');
+        //                 } else {
+        //                     $('.error-msg').hide();
+        //                     $('.form-group').removeClass('focused');
+        //                     _self.find('.btn-primary').after('<div class="success-msg"><p>' + data.success + '</p></div>');
+        //                     _self.closest('div').find('input,textarea').val('');
 
-                            setTimeout(function() {
-                                $('.success-msg').fadeOut('slow');
-                            }, 5000);
-                        }
-                    }
-                });
-            });
-        },
+        //                     setTimeout(function() {
+        //                         $('.success-msg').fadeOut('slow');
+        //                     }, 5000);
+        //                 }
+        //             }
+        //         });
+        //     });
+        // },
 
         axilBackToTop: function() {
             var btn = $('#backto-top');
@@ -128,12 +128,12 @@
                         $(targetSiblings).slideUp(400);
 
                         $(this).parent('.menu-item-has-children').toggleClass('open');
-                        
+
                     });
                     $('#mobilemenu-popup').addClass('offcanvas');
                 }else {
                     $('#mobilemenu-popup').removeClass('offcanvas');
-                    
+
                 }
             }
 
@@ -156,7 +156,7 @@
                         filter: filterValue
                     });
                 });
-                
+
                 // init Isotope
                 var $grid = $('.isotope-list').isotope({
                     itemSelector: '.project',
@@ -169,7 +169,7 @@
                     }
                 });
             });
-        
+
             $('.isotope-button button').on('click', function (event) {
                 $(this).siblings('.is-checked').removeClass('is-checked');
                 $(this).addClass('is-checked');
@@ -232,7 +232,7 @@
                 });
             }
         },
-        
+
         tiltAnimation: function () {
             var _tiltAnimation = $('.paralax-image');
             if (_tiltAnimation.length) {
@@ -283,7 +283,7 @@
                 monthlyPrice = $('.monthly-pricing'),
                 yearlyPrice = $('.yearly-pricing'),
                 buttonSlide = $('#pricing-checkbox');
-            
+
             $(monthlySelectBtn).on('click', function() {
                 buttonSlide.prop('checked', true);
                 $(this).addClass('active').parent('.nav-item').siblings().children().removeClass('active');
@@ -291,7 +291,7 @@
                 yearlyPrice.css('display', 'none');
 
             });
-            
+
             $(yearlySelectBtn).on('click', function() {
                 buttonSlide.prop('checked', false);
                 $(this).addClass('active').parent('.nav-item').siblings().children().removeClass('active');
@@ -311,7 +311,7 @@
                     monthlySelectBtn.removeClass('active');
                     monthlyPrice.css('display', 'none');
                     yearlyPrice.css('display', 'block');
-                    
+
                 }
             });
         },
@@ -335,7 +335,7 @@
                     $('.services-grid.active, .counterup-progress.active, .testimonial-grid.active, .pricing-table.active, .brand-grid.active, .blog-list.active, .about-quality.active, .team-grid.active, .splash-hover-control.active').removeClass('active');
                     $(self).addClass('active');
                 }, 0);
-                
+
             });
         },
 

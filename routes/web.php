@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,3 +44,5 @@ Route::get('about', function () {
 Route::get('contact', function () {
     return view('layouts.contact');
 })->name('contact');
+
+Route::post('store',[ContactController::class,'store'])->name('store');

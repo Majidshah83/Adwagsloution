@@ -89,26 +89,33 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-6">
                         <div class="contact-form-box shadow-box mb--30">
+     @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    @endif
                             <h3 class="title">Get a free Keystroke quote now</h3>
-                            <form method="POST" action="mail.php" class="axil-contact-form">
+
+                            <form method="POST" action="{{route('store')}}">
+                                @csrf
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" name="contact-name">
+                                    <input type="text" class="form-control" name="name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" name="contact-email">
+                                    <input type="email" class="form-control" name="email">
                                 </div>
                                 <div class="form-group">
                                     <label>Company</label>
-                                    <input type="text" class="form-control" name="contact-company">
+                                    <input type="text" class="form-control" name="company">
                                 </div>
                                 <div class="form-group mb--40">
                                     <label>How can we help you?</label>
-                                    <textarea name="contact-message" id="contact-message" class="form-control textarea" cols="30" rows="4"></textarea>
+                                    <textarea name="help_message" id="contact-message" class="form-control textarea" cols="30" rows="4"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="axil-btn btn-fill-primary btn-fluid btn-primary" name="submit-btn">Get Pricing Now</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
                                 </div>
                             </form>
                         </div>
