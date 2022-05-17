@@ -36,3 +36,11 @@ Route::get('price', function () {
 Route::get('blog', function () {
     return view('layouts.blog');
 })->name('blog');
+
+Route::get('about', function () {
+    return view('layouts.about');
+})->name('about');
+
+Route::get('contact', function () {
+    return view('layouts.contact');
+})->name('contact');
