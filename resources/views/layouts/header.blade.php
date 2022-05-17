@@ -84,8 +84,8 @@
                                     <li><a href="{{route('service')}}">Services</a></li>
                                     <li><a href="{{route('portfolio')}}">Portfolio</a></li>
                                     <!-- <li><a href="case-study.html">Case Study</a></li> -->
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="pricing-table.html">Pricing</a></li>
+                                    <li><a href="{{route('team')}}">Team</a></li>
+                                    <li><a href="{{route('team')}}">Pricing</a></li>
                                     <li><a href="blog.html">Blog</a></li>
                                     <li><a href="about-us.html">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>

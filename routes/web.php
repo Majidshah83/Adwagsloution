@@ -24,3 +24,11 @@ Route::get('service', function () {
 Route::get('portfolio', function () {
     return view('layouts.portfolio');
 })->name('portfolio');
+
+Route::get('team', function () {
+    return view('layouts.team');
+})->name('team');
+
+Route::get('price', function () {
+    return view('layouts.price');
+})->name('price');
