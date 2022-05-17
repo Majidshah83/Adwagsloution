@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.master');
 });
+
 Route::get('service', function () {
     return view('layouts.service');
 })->name('service');
+
+Route::get('portfolio', function () {
+    return view('layouts.portfolio');
+})->name('portfolio');

@@ -82,7 +82,7 @@
                                     </li> -->
                                     <li><a href="{{url('/')}}">Home</a></li>
                                     <li><a href="{{route('service')}}">Services</a></li>
-                                    <li><a href="portfolio-3.html">Portfolio</a></li>
+                                    <li><a href="{{route('portfolio')}}">Portfolio</a></li>
                                     <!-- <li><a href="case-study.html">Case Study</a></li> -->
                                     <li><a href="team.html">Team</a></li>
                                     <li><a href="pricing-table.html">Pricing</a></li>
