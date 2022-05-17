@@ -32,3 +32,7 @@ Route::get('team', function () {
 Route::get('price', function () {
     return view('layouts.price');
 })->name('price');
+
+Route::get('blog', function () {
+    return view('layouts.blog');
+})->name('blog');
